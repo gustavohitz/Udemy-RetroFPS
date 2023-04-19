@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
     public Camera gameCamera;
+    public int maxAmmo;
+    public int currentAmmo;
 
     private void Update() {
         Shoot();
@@ -12,16 +14,23 @@ public class PlayerAttack : MonoBehaviour {
 
     private void Shoot() {
         if(Input.GetButtonDown("Fire1")) {
-            Ray ray = gameCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            RaycastHit hitPoint;
-            //um raio é lançado no centro da tela. Abaixo, verificamos se atingiu algo.
+            if(currentAmmo > 0) {
+                Ray ray = gameCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+                RaycastHit hitPoint;
+                //um raio é lançado no centro da tela. Abaixo, verificamos se atingiu algo.
 
-            if(Physics.Raycast(ray, out hitPoint)) {
-                Debug.Log("I'm looking at: " + hitPoint.transform.name);
-                //a Unity pega o nome do gameobject que atingimos.
+                if(Physics.Raycast(ray, out hitPoint)) {
+                    Debug.Log("I'm looking at: " + hitPoint.transform.name);
+                    //a Unity pega o nome do gameobject que atingimos.
+                }
+                else {
+                    Debug.Log("I'm looking at nothing");
+                }
+
+                currentAmmo --;
             }
             else {
-                Debug.Log("I'm looking at nothing");
+                Debug.Log("No ammo");
             }
         }
     }

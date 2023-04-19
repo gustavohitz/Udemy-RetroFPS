@@ -653,3 +653,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 519420031}
+  maxAmmo: 30
+  currentAmmo: 10
