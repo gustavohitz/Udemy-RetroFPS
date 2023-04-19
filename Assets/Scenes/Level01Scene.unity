@@ -442,3 +442,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 1913061670}
   playerSpeed: 5
+  mouseSensitivity: 5
