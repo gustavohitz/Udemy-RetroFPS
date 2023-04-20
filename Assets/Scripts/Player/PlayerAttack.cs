@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
     public Camera gameCamera;
+    public GameObject bulletImpactPrefab;
     public int maxAmmo;
     public int currentAmmo;
 
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour {
                 //um raio é lançado no centro da tela. Abaixo, verificamos se atingiu algo.
 
                 if(Physics.Raycast(ray, out hitPoint)) {
+                    Instantiate(bulletImpactPrefab, hitPoint.point, hitPoint.transform.rotation);
                     Debug.Log("I'm looking at: " + hitPoint.transform.name);
                     //a Unity pega o nome do gameobject que atingimos.
                 }
