@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour {
 
     public Camera gameCamera;
     public GameObject bulletImpactPrefab;
     public Animator gunAnimator;
+    public Text ammoTxt;
     public int maxAmmo;
     public int currentAmmo;
+
+    private void Start() {
+        ammoTxt.text = "AMMO\n" + currentAmmo;
+    }
 
     private void Update() {
         Shoot();
@@ -31,6 +37,7 @@ public class PlayerAttack : MonoBehaviour {
                 }
 
                 currentAmmo --;
+                ammoTxt.text = "AMMO\n" + currentAmmo;
                 gunAnimator.SetTrigger("Gun Firing");
             }
             else {
