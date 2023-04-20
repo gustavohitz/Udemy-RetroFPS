@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public static PlayerController instance;
 
     public Rigidbody2D rb2d;
+
     public float playerSpeed;
     public float mouseSensitivity;
 
     private Vector2 _keyboardCommands;
     private Vector2 _mouseMovement;
+
+    private void Awake() {
+        instance = this;
+    }
 
     private void Update() {
         MovePlayer();
