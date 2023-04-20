@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour {
 
     public Camera gameCamera;
     public GameObject bulletImpactPrefab;
+    public Animator gunAnimator;
     public int maxAmmo;
     public int currentAmmo;
 
@@ -30,6 +31,7 @@ public class PlayerAttack : MonoBehaviour {
                 }
 
                 currentAmmo --;
+                gunAnimator.SetTrigger("Gun Firing");
             }
             else {
                 Debug.Log("No ammo");
