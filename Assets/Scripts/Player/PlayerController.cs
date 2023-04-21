@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public static PlayerController instance;
 
     public Rigidbody2D rb2d;
+    public Animator GunPanelAnimator;
 
     public float playerSpeed;
     public float mouseSensitivity;
@@ -30,6 +31,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 verticalMove = transform.right * _keyboardCommands.y;
 
         rb2d.velocity = (horizontalMove + verticalMove) * playerSpeed;
+
+        if(rb2d.velocity.magnitude == 0) {
+            GunPanelAnimator.Play("ANM_PlayerIdle");
+        }
+        else {
+            GunPanelAnimator.Play("ANM_PlayerWalking");
+        }
     }
 
     private void RotateCamera() {
