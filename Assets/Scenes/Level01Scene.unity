@@ -536,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284769296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.37, y: -3.72, z: 0}
+  m_LocalPosition: {x: 2.16, y: -3.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1286,6 +1286,7 @@ GameObject:
   - component: {fileID: 1630466549}
   - component: {fileID: 1630466548}
   - component: {fileID: 1630466547}
+  - component: {fileID: 1630466551}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1389,6 +1390,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630466551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630466546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d5721ff7464dc7aeb53236d469afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 3
+  walkingPoints:
+  - {fileID: 1952174947}
+  - {fileID: 1433214471}
+  - {fileID: 284769297}
+  currentWalkingPoint: 0
+  isAlive: 0
+  canWalk: 0
 --- !u!1 &1913061668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952174946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 4.08, z: 0}
+  m_LocalPosition: {x: 2.16, y: 4.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
