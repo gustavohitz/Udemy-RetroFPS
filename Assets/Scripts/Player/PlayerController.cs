@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
     public static PlayerController instance;
 
     public Rigidbody2D rb2d;
-    public Animator GunPanelAnimator;
+    public Animator gunPanelAnimator;
 
     public float playerSpeed;
     public float mouseSensitivity;
@@ -33,10 +33,10 @@ public class PlayerController : MonoBehaviour {
         rb2d.velocity = (horizontalMove + verticalMove) * playerSpeed;
 
         if(rb2d.velocity.magnitude == 0) {
-            GunPanelAnimator.Play("ANM_PlayerIdle");
+            gunPanelAnimator.Play("ANM_PlayerIdle");
         }
         else {
-            GunPanelAnimator.Play("ANM_PlayerWalking");
+            gunPanelAnimator.Play("ANM_PlayerWalking");
         }
     }
 
