@@ -1410,6 +1410,8 @@ MonoBehaviour:
   currentWalkingPoint: 0
   isAlive: 0
   canWalk: 0
+  timeBetweenWalkingPoints: 3
+  currentTime: 3
 --- !u!1 &1913061668
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour {
     public bool isAlive;
     public bool canWalk;
 
+    public float timeBetweenWalkingPoints;
+    public float currentTime;
+
     private void Start() {
         isAlive = true;
         canWalk = true;
@@ -28,13 +31,23 @@ public class Enemy : MonoBehaviour {
                 transform.position = Vector2.MoveTowards(transform.position, walkingPoints[currentWalkingPoint].position, enemySpeed * Time.deltaTime);
 
                 if(transform.position.y == walkingPoints[currentWalkingPoint].position.y) {
-                    currentWalkingPoint++;
+                    WaitBeforeWalking();
                 }
 
                 if(currentWalkingPoint == walkingPoints.Length) {
                     currentWalkingPoint = 0;
                 }
             }
+        }
+    }
+
+    private void WaitBeforeWalking() {
+        currentTime -= Time.deltaTime;
+
+        if(currentTime <= 0) {
+            canWalk = true;
+            currentWalkingPoint++;
+            currentTime = timeBetweenWalkingPoints;
         }
     }
     
