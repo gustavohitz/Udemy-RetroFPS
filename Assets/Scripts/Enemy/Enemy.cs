@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour {
     public Transform shotOrigin;
     public GameObject shotPrefab;
 
+    [Header("Animation")]
+    public Animator animator;
+
     [Header("Boolean Conditions to Move")]
     public bool isAlive;
     public bool canWalk;
@@ -47,8 +50,13 @@ public class Enemy : MonoBehaviour {
         if(isAlive) {
             if(canWalk) {
                 transform.position = Vector2.MoveTowards(transform.position, walkingPoints[currentWalkingPoint].position, enemySpeed * Time.deltaTime);
+                
+                if(transform.position.y != walkingPoints[currentWalkingPoint].position.y) {
+                    animator.SetTrigger("Walking");
+                }
 
                 if(transform.position.y == walkingPoints[currentWalkingPoint].position.y) {
+                    animator.SetTrigger("Idle");
                     WaitBeforeWalking();
                 }
 
@@ -81,6 +89,7 @@ public class Enemy : MonoBehaviour {
     private void AttackPlayer() {
         if(!enemyHasAttacked) {
             canWalk = false;
+            animator.SetTrigger("Attacking");
             Instantiate(shotPrefab, shotOrigin.position, shotOrigin.rotation);
             enemyHasAttacked = true;
             Invoke(nameof(ResetEnemyAttack), timeBetweenAttack);
@@ -96,11 +105,12 @@ public class Enemy : MonoBehaviour {
     public void TakeDamage(int damageTaken) {
         if(isAlive) {
             currentHealth -= damageTaken;
+            animator.SetTrigger("Damage");
 
             if(currentHealth <= 0) {
                 isAlive = false;
                 canWalk = false;
-                DefeatEnemy();
+                animator.SetTrigger("Down");
             }
         }
     }
