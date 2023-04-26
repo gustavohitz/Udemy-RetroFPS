@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour {
         instance = this;
     }
 
+    private void Start() {
+        playerIsAlive = true;
+    }
+
     public void GameOver() {
         playerIsAlive = false;
         Debug.Log("Player was killed");

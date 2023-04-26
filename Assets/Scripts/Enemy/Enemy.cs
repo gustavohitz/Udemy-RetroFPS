@@ -42,8 +42,10 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Update() {
-        MoveEnemy();
-        CheckDistance();
+        if(GameManager.instance.playerIsAlive) {
+            MoveEnemy();
+            CheckDistance();
+        }
     }
 
     private void MoveEnemy() {
