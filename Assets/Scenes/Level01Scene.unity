@@ -1271,7 +1271,7 @@ GameObject:
   - component: {fileID: 1445016373}
   m_Layer: 0
   m_Name: 3DCollider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 1630466551}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1447,6 +1447,8 @@ MonoBehaviour:
     type: 3}
   isAlive: 0
   canWalk: 0
+  maxHealth: 10
+  currentHealth: 0
   timeBetweenWalkingPoints: 3
   currentTime: 3
 --- !u!1 &1913061668
@@ -1557,7 +1559,8 @@ MonoBehaviour:
   gunAnimator: {fileID: 1256143814}
   ammoTxt: {fileID: 115877689}
   maxAmmo: 30
-  currentAmmo: 10
+  currentAmmo: 30
+  damageCausedByGun: 1
 --- !u!114 &1913061674
 MonoBehaviour:
   m_ObjectHideFlags: 0

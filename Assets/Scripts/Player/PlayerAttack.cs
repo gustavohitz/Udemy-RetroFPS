@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour {
     public Text ammoTxt;
     public int maxAmmo;
     public int currentAmmo;
+    public int damageCausedByGun;
 
     private void Start() {
         ammoTxt.text = "AMMO\n" + currentAmmo;
@@ -31,6 +32,10 @@ public class PlayerAttack : MonoBehaviour {
                     Instantiate(bulletImpactPrefab, hitPoint.point, hitPoint.transform.rotation);
                     Debug.Log("I'm looking at: " + hitPoint.transform.name);
                     //a Unity pega o nome do gameobject que atingimos.
+
+                    if(hitPoint.transform.gameObject.CompareTag("Enemy")) {
+                        hitPoint.transform.gameObject.GetComponentInParent<Enemy>().TakeDamage(damageCausedByGun);
+                    }
                 }
                 else {
                     Debug.Log("I'm looking at nothing");

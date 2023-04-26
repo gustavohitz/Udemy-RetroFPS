@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour {
     public bool canWalk;
     private bool enemyHasAttacked;
 
+    [Header("Health")]
+    public int maxHealth;
+    public int currentHealth;
+
     [Header("Time Conditions to Move")]
     public float timeBetweenWalkingPoints;
     public float currentTime;
@@ -28,6 +32,8 @@ public class Enemy : MonoBehaviour {
         isAlive = true;
         canWalk = true;
         enemyHasAttacked = false;
+
+        currentHealth = maxHealth;
 
         transform.position = walkingPoints[0].position;
     }
@@ -85,6 +91,21 @@ public class Enemy : MonoBehaviour {
 
     private void ResetEnemyAttack() {
         enemyHasAttacked = false;
+    }
+
+    public void TakeDamage(int damageTaken) {
+        if(isAlive) {
+            currentHealth -= damageTaken;
+
+            if(currentHealth <= 0) {
+                isAlive = false;
+                canWalk = false;
+                DefeatEnemy();
+            }
+        }
+    }
+    public void DefeatEnemy() {
+        Destroy(this.gameObject);
     }
     
 }
