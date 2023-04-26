@@ -110,6 +110,7 @@ public class Enemy : MonoBehaviour {
             if(currentHealth <= 0) {
                 isAlive = false;
                 canWalk = false;
+                enemyHasAttacked = true;
                 animator.SetTrigger("Down");
             }
         }
