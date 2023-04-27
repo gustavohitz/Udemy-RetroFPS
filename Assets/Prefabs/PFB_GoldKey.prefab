@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2067114614936829899}
   - component: {fileID: 2067114614936829492}
   - component: {fileID: 2067114614936829493}
+  - component: {fileID: 7743649402998542808}
   m_Layer: 0
   m_Name: PFB_GoldKey
   m_TagString: Untagged
@@ -114,3 +115,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!114 &7743649402998542808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067114614936829494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17e7a37074f144e9a6bad11e9849287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAmmoCollectable: 0
+  _isHealthCollectable: 0
+  _isSilverKeyCollectable: 0
+  _isGoldenKeyCollectable: 1
+  _ammoAmountGiven: 0
+  _healthAmountGiven: 0
+  _minAmmoAmountPerItem: 0
+  _maxAmmoAmountPerItem: 0
+  _minHealthAmountPerItem: 0
+  _maxHealthAmountPerItem: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9001871140330116623}
   - component: {fileID: 9001871140330116656}
   - component: {fileID: 9001871140330116657}
+  - component: {fileID: 1915949942512570732}
   m_Layer: 0
   m_Name: PFB_SilverKey
   m_TagString: Untagged
@@ -114,3 +115,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528e8d06f847440c9a25e2705d78d956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1915949942512570732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001871140330116658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17e7a37074f144e9a6bad11e9849287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAmmoCollectable: 0
+  _isHealthCollectable: 0
+  _isSilverKeyCollectable: 1
+  _isGoldenKeyCollectable: 0
+  _ammoAmountGiven: 0
+  _healthAmountGiven: 0
+  _minAmmoAmountPerItem: 0
+  _maxAmmoAmountPerItem: 0
+  _minHealthAmountPerItem: 0
+  _maxHealthAmountPerItem: 0

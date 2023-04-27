@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3981727443047578211}
   - component: {fileID: 3981727443047578210}
   - component: {fileID: 3981727443047578209}
+  - component: {fileID: 802001056775545321}
   m_Layer: 0
   m_Name: PFB_Medkit
   m_TagString: Untagged
@@ -114,3 +115,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528e8d06f847440c9a25e2705d78d956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &802001056775545321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981727443047578208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17e7a37074f144e9a6bad11e9849287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isAmmoCollectable: 0
+  _isHealthCollectable: 1
+  _isSilverKeyCollectable: 0
+  _isGoldenKeyCollectable: 0
+  _ammoAmountGiven: 0
+  _healthAmountGiven: 0
+  _minAmmoAmountPerItem: 0
+  _maxAmmoAmountPerItem: 0
+  _minHealthAmountPerItem: 10
+  _maxHealthAmountPerItem: 20
