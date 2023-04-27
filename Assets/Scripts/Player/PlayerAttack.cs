@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour {
     public int damageCausedByGun;
 
     private void Start() {
-        ammoTxt.text = "AMMO\n" + currentAmmo;
+        ammoTxt.text = currentAmmo.ToString();
     }
 
     private void Update() {
@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour {
                 }
 
                 currentAmmo --;
-                ammoTxt.text = "AMMO\n" + currentAmmo;
+                ammoTxt.text = currentAmmo.ToString();
                 gunAnimator.SetTrigger("Gun Firing");
             }
             else {
