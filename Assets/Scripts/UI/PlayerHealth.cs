@@ -27,5 +27,15 @@ public class PlayerHealth : MonoBehaviour {
             }
         }
     }
+    public void IncreaseHealth(int healthReceived) {
+        if(_currentHealth + healthReceived < _maxHealth) {
+            _currentHealth += healthReceived;
+        }
+        else {
+            _currentHealth = _maxHealth;
+        }
+
+        _healthTxt.text = _currentHealth.ToString();
+    }
 
 }

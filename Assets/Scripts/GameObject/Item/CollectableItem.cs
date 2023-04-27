@@ -30,10 +30,10 @@ public class CollectableItem : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Player")) {
             if(_isAmmoCollectable) {
-
+                other.gameObject.GetComponent<PlayerAttack>().IncreaseAmmo(Random.Range(_minAmmoAmountPerItem, _maxAmmoAmountPerItem));
             }
             if(_isHealthCollectable) {
-
+                other.gameObject.GetComponent<PlayerHealth>().IncreaseHealth(Random.Range(_minHealthAmountPerItem, _maxHealthAmountPerItem));
             }
             if(_isSilverKeyCollectable) {
 

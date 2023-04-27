@@ -2231,8 +2231,8 @@ MonoBehaviour:
     type: 3}
   gunAnimator: {fileID: 1256143814}
   ammoTxt: {fileID: 575048860}
-  maxAmmo: 100
-  currentAmmo: 100
+  maxAmmo: 50
+  currentAmmo: 20
   damageCausedByGun: 1
 --- !u!114 &1913061674
 MonoBehaviour:

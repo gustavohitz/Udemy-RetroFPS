@@ -51,4 +51,15 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
+    public void IncreaseAmmo(int AmmoReceived) {
+        if(currentAmmo + AmmoReceived < maxAmmo) {
+            currentAmmo += AmmoReceived;
+        }
+        else {
+            currentAmmo = maxAmmo;
+        }
+
+        ammoTxt.text = currentAmmo.ToString();
+    }
+
 }
