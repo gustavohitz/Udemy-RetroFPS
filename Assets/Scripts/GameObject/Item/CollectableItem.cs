@@ -36,10 +36,10 @@ public class CollectableItem : MonoBehaviour {
                 other.gameObject.GetComponent<PlayerHealth>().IncreaseHealth(Random.Range(_minHealthAmountPerItem, _maxHealthAmountPerItem));
             }
             if(_isSilverKeyCollectable) {
-
+                GameManager.instance.hasSilverKey = true;
             }
             if(_isGoldenKeyCollectable) {
-
+                GameManager.instance.hasGoldenKey = true;
             }
 
             Destroy(this.gameObject);

@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     public bool playerIsAlive;
+    public bool hasSilverKey;
+    public bool hasGoldenKey;
 
     private void Awake() {
         instance = this;
@@ -14,6 +16,8 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         playerIsAlive = true;
+        hasSilverKey = false;
+        hasGoldenKey = false;
     }
 
     public void GameOver() {
