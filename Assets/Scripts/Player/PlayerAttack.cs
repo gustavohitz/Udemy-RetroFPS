@@ -51,9 +51,9 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
-    public void IncreaseAmmo(int AmmoReceived) {
-        if(currentAmmo + AmmoReceived < maxAmmo) {
-            currentAmmo += AmmoReceived;
+    public void IncreaseAmmo(int ammoReceived) {
+        if(currentAmmo + ammoReceived < maxAmmo) {
+            currentAmmo += ammoReceived;
         }
         else {
             currentAmmo = maxAmmo;
