@@ -1397,6 +1397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1226750185}
   - component: {fileID: 1226750186}
+  - component: {fileID: 1226750187}
   m_Layer: 0
   m_Name: Door Check
   m_TagString: Untagged
@@ -1445,6 +1446,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1226750187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226750184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2e1286b9e1944dab6137145a377eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doorAnimator: {fileID: 1091496334}
+  _doorCollider: {fileID: 1091496333}
+  _isRegularDoor: 1
+  _isSilverKeyDoor: 0
+  _isGoldenKeyDoor: 0
 --- !u!1 &1239163394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,7 +2803,7 @@ PrefabInstance:
     - target: {fileID: 2734924057736736584, guid: 33bf769869976478882cc22bb2586e61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.455
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 2734924057736736584, guid: 33bf769869976478882cc22bb2586e61,
         type: 3}
@@ -3130,7 +3148,7 @@ PrefabInstance:
     - target: {fileID: 7985398474819675088, guid: e2b05bd1945cb44c682e96d0785f6334,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.64
       objectReference: {fileID: 0}
     - target: {fileID: 7985398474819675088, guid: e2b05bd1945cb44c682e96d0785f6334,
         type: 3}
