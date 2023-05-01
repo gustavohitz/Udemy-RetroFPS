@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 horizontalMove = transform.up * - _keyboardCommands.x;
         Vector3 verticalMove = transform.right * _keyboardCommands.y;
 
-        rb2d.velocity = (horizontalMove + verticalMove) * playerSpeed;
+        rb2d.velocity = (horizontalMove + verticalMove).normalized * playerSpeed;
 
         if(rb2d.velocity.magnitude == 0) {
             gunPanelAnimator.Play("ANM_PlayerIdle");
