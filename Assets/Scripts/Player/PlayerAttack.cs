@@ -14,6 +14,8 @@ public class PlayerAttack : MonoBehaviour {
     public int damageCausedByGun;
 
     private void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         ammoTxt.text = currentAmmo.ToString();
     }
 
