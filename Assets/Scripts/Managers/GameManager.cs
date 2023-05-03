@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver() {
         playerIsAlive = false;
+        FindObjectOfType<BgmManager>().PlayGameOverBGM();
         Debug.Log("Player was killed");
     }
     
