@@ -31,15 +31,19 @@ public class CollectableItem : MonoBehaviour {
         if(other.gameObject.CompareTag("Player")) {
             if(_isAmmoCollectable) {
                 other.gameObject.GetComponent<PlayerAttack>().IncreaseAmmo(Random.Range(_minAmmoAmountPerItem, _maxAmmoAmountPerItem));
+                SfxManager.instance.PlayOnCollectingAmmoSFX();
             }
             if(_isHealthCollectable) {
                 other.gameObject.GetComponent<PlayerHealth>().IncreaseHealth(Random.Range(_minHealthAmountPerItem, _maxHealthAmountPerItem));
+                SfxManager.instance.PlayOnCollectingHealthSFX();
             }
             if(_isSilverKeyCollectable) {
                 GameManager.instance.hasSilverKey = true;
+                SfxManager.instance.PlayOnCollectingKeySFX();
             }
             if(_isGoldenKeyCollectable) {
                 GameManager.instance.hasGoldenKey = true;
+                SfxManager.instance.PlayOnCollectingKeySFX();
             }
 
             Destroy(this.gameObject);

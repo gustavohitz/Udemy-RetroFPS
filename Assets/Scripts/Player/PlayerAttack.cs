@@ -42,11 +42,12 @@ public class PlayerAttack : MonoBehaviour {
                 }
 
                 currentAmmo --;
+                SfxManager.instance.PlayPlayerAttackSFX();
                 ammoTxt.text = currentAmmo.ToString();
                 gunAnimator.SetTrigger("Gun Firing");
             }
             else {
-                Debug.Log("No ammo");
+                SfxManager.instance.PlayNoAmmoSFX();
             }
         }
     }

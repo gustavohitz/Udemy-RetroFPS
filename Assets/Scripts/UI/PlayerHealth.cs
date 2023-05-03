@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeDamage(int damageTaken) {
         if(GameManager.instance.playerIsAlive) {
             _currentHealth -= damageTaken;
+            SfxManager.instance.PlayPlayerDamageSFX();
             _healthTxt.text = _currentHealth.ToString();
 
             if(_currentHealth <= 0) {

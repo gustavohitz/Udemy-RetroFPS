@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour {
         if(!enemyHasAttacked) {
             canWalk = false;
             animator.SetTrigger("Attacking");
+            SfxManager.instance.PlayEnemyAttackSFX();
             Instantiate(shotPrefab, shotOrigin.position, shotOrigin.rotation);
             enemyHasAttacked = true;
             Invoke(nameof(ResetEnemyAttack), timeBetweenAttack);
@@ -107,12 +108,14 @@ public class Enemy : MonoBehaviour {
     public void TakeDamage(int damageTaken) {
         if(isAlive) {
             currentHealth -= damageTaken;
+            SfxManager.instance.PlayEnemyDamageSFX();
             animator.SetTrigger("Damage");
 
             if(currentHealth <= 0) {
                 isAlive = false;
                 canWalk = false;
                 enemyHasAttacked = true;
+                SfxManager.instance.PlayOnDefeatingEnemySFX();
                 animator.SetTrigger("Down");
             }
         }
