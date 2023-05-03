@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public bool hasGoldenKey;
     [SerializeField]
     private GameObject _pausePanel;
+    [SerializeField]
+    private GameObject _gameOverPanel;
     private bool _isGamePaused;
 
     private void Awake() {
@@ -60,6 +62,11 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
+        _gameOverPanel.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
+
         playerIsAlive = false;
         FindObjectOfType<BgmManager>().PlayGameOverBGM();
         Debug.Log("Player was killed");
