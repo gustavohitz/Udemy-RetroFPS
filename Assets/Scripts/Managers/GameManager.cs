@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour {
     private GameObject _pausePanel;
     [SerializeField]
     private GameObject _gameOverPanel;
-    private bool _isGamePaused;
+    
+    public bool isGamePaused;
 
     private void Awake() {
         instance = this;
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour {
         playerIsAlive = true;
         hasSilverKey = false;
         hasGoldenKey = false;
-        _isGamePaused = false;
+        isGamePaused = false;
     }
 
     private void Update() {
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour {
     public void PauseGame() {
         Time.timeScale = 0f;
         _pausePanel.SetActive(true);
-        _isGamePaused = true;
+        isGamePaused = true;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour {
     public void UnpauseGame() {
         Time.timeScale = 1f;
         _pausePanel.SetActive(false);
-        _isGamePaused = false;
+        isGamePaused = false;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour {
 
     private void PushingKeyToPauseAndUnpauseGame() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            if(!_isGamePaused) {
+            if(!isGamePaused) {
                 PauseGame();
             }
             else {

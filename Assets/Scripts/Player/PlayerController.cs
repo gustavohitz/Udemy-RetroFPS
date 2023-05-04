@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        MovePlayer();
-        RotateCamera();
+        if(GameManager.instance.isGamePaused == false && GameManager.instance.playerIsAlive == true) {
+            MovePlayer();
+            RotateCamera();
+        }
     }
 
     private void MovePlayer() {

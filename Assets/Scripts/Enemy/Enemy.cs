@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour {
         if(isAlive) {
             if(canWalk) {
                 transform.position = Vector2.MoveTowards(transform.position, walkingPoints[currentWalkingPoint].position, enemySpeed * Time.deltaTime);
+                transform.position += new Vector3(0f, 0f, -0.3f);
                 
                 if(transform.position.y != walkingPoints[currentWalkingPoint].position.y) {
                     animator.SetTrigger("Walking");

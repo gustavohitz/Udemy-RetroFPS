@@ -20,7 +20,9 @@ public class PlayerAttack : MonoBehaviour {
     }
 
     private void Update() {
-        Shoot();
+        if(GameManager.instance.isGamePaused == false && GameManager.instance.playerIsAlive == true) {
+            Shoot();
+        }
     }
 
     private void Shoot() {
